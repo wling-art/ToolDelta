@@ -38,7 +38,7 @@ def cfg_isinstance(obj: Any, typ: type | tuple[type]):
     """
     if isinstance(typ, type):
         return cfg_isinstance_single(obj, typ)
-    elif isinstance(typ, tuple):
+    if isinstance(typ, tuple):
         try:
             for i in typ:
                 if cfg_isinstance_single(obj, i):
